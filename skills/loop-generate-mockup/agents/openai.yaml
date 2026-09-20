@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate Mockup Loop"
+  short_description: "Build and independently review reusable design mockups"
+  default_prompt: "Use $loop-generate-mockup to create an interactive mockup from this task's requirements and project design context, then independently review it and deliver a concise implementation brief."
