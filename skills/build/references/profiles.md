@@ -25,12 +25,12 @@ contract.
 | Level | Typical surface | Required workflow |
 |---|---|---|
 | `L0` | Nonbehavioral documentation, metadata, or test-only correction. | Inline change and relevant mechanical check. |
-| `L1` | Known bounded local fix or deterministic setting value; reliable seam, no higher trigger. | Discovery if uncertain, approved contract, one writer, maker checks, applicable hardening, rerun affected checks, fresh final review, traceability. |
-| `L2` | Shared state, nontrivial cross-module/package flow, material ownership unknowns. | L1 plus pre-approval Scout, frozen pre-patch CHARTER, fresh HARDEN author context, and final review covering material test deltas. |
-| `L3` | Actual protected changes listed above. | L2 plus applicable specialist and explicit human approval before completion; ask before changing protected/shared contracts. |
+| `L1` | Known bounded local fix or deterministic setting value; reliable seam, no higher trigger. | Discovery if uncertain, approved contract, one writer, maker checks, applicable hardening, rerun affected checks, independent final review, traceability. Use the L1 fast lane when its conditions hold. |
+| `L2` | Shared state, nontrivial cross-module/package flow, material ownership unknowns. | L1 plus pre-approval Scout, frozen RED tests before the patch, `HARDEN` when a plausible near-correct failure is uncovered, and final review covering material test deltas. |
+| `L3` | Actual protected changes listed above. | L2 plus required `HARDEN`, applicable specialist once on final bytes, and explicit human approval before completion; ask before changing protected/shared contracts. |
 
-One fresh final reviewer may provide separately labeled production and material
-test-delta verdicts after the latest production AND test edits. An inapplicable
+One independent final reviewer may provide separately labeled production and
+material test-delta verdicts after the latest production AND test edits. An inapplicable
 hardening/specialist gate needs approved concrete N/A rationale and sufficient
 alternative evidence, never a ceremonial empty-scope task.
 
@@ -47,7 +47,7 @@ lower API, security, data, process, or engineering risk.
 
 Reclassify before crossing a new trigger. Stop before the next edit, raise the
 floor, add the required gates, and reapprove the contract. Do not cross into
-`L2`/`L3` implementation before freezing the Test Charter. If an unexpected
-escalation is discovered after a patch exists, derive the charter from the
-approved contract and pre-change baseline without exposing the patch, then
-reapprove before further edits.
+`L2`/`L3` implementation before the RED tests are frozen. If an unexpected
+escalation is discovered after a patch exists, reapprove first, then run `RED`
+from the approved contract and pre-change baseline without exposing the patch
+before further production edits.

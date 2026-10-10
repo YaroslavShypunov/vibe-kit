@@ -14,6 +14,11 @@ Use the supplied failure signature, repair history, and current evidence.
 Reproduce with the smallest reliable command or scenario; do not start from a
 speculative fix.
 
+When the task names a review packet file, read it first. It holds the
+repository root, branch, HEAD, status, full diff, and new files. Use only absolute paths under the repository root given in the task. Never
+guess repository locations; if a path is missing, search inside that root or
+report it as a material unknown.
+
 Form a small set of plausible hypotheses and run the cheapest discriminating
 checks. Classify the failure as `IMPLEMENTATION`, `TEST`, `ENVIRONMENT`,
 `INFRASTRUCTURE`, `PRE_EXISTING`, `CONTRACT`, or `UNKNOWN`. Do not conduct a
