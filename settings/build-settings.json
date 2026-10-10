@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.1-sol",
+  "effortLevel": "xhigh",
+  "subagents": {
+    "agents": {
+      "coder": {
+        "model": "gpt-6.1-sol",
+        "effortLevel": "xhigh"
+      },
+      "diagnostician": {
+        "model": "gpt-6.1-sol",
+        "effortLevel": "xhigh"
+      },
+      "repo-scout": {
+        "model": "gpt-6-luna",
+        "effortLevel": "max"
+      },
+      "reviewer": {
+        "model": "gpt-6.1-sol",
+        "effortLevel": "xhigh"
+      },
+      "security-reviewer": {
+        "model": "gpt-6.1-sol",
+        "effortLevel": "xhigh"
+      },
+      "test-engineer": {
+        "model": "gpt-6-luna",
+        "effortLevel": "max"
+      }
+    }
+  }
+}
